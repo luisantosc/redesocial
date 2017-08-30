@@ -1,0 +1,79 @@
+<!doctype html>  
+<html>
+	<head>
+		<meta charset="utf-8"/>	
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway" rel="stylesheet">
+		<script src="./js/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$("#Cadastrar").click(function(){
+					$(".welcome").fadeOut();
+					$(".botao").fadeOut();
+					$(".login").fadeOut();
+					$(".cadastro").fadeIn();
+					var altura = $(window).innerHeight();
+					var alturaDiv = $(".cadastro").innerHeight();
+					var novaAltura = (altura - alturaDiv)/2;
+					$(".cadastro").css("top",novaAltura);
+					var largura = $(window).innerWidth();
+					var larguraDiv = $(".cadastro").innerWidth();
+					var novalargura = (largura- larguraDiv)/2;
+					$(".cadastro").css("left",novalargura);
+
+				})
+				$("#Entrar").click(function(){
+					$(".welcome").fadeOut();
+					$(".botao").fadeOut();
+					$("#Cadastrar").fadeIn();
+					$(".cadastro").fadeOut();
+					$(".login").fadeIn();
+					var altura = $(window).innerHeight();
+					var alturaDiv = $(".login").innerHeight();
+					var novaAltura = (altura - alturaDiv)/2;
+					$(".login").css("top",novaAltura);
+					var largura = $(window).innerWidth();
+					var larguraDiv = $(".login").innerWidth();
+					var novalargura = (largura- larguraDiv)/2;
+					$(".login").css("left",novalargura);
+				})
+			});
+		</script>
+	</head>
+	<body>
+
+		<div class="botao">
+			<button class="entrar-cadastrar" id="Cadastrar"> Cadastrar </button>
+			<button class="entrar-cadastrar" id="Entrar"> Entrar </button>
+		</div>
+		<div class="login">
+			<form >
+				<input placeholder="Username" type="text"/><br/>
+				<input placeholder="Senha" type="password"/><br/>
+				<input class="sub" type="submit" value="Entrar"/><br/>
+				<button class="voltar" href="index.html">Voltar</button><br/>
+			</form>
+		</div>
+
+		<p class="welcome">Welcome</p>
+
+		<div class="cadastro">
+			<form>
+				<input placeholder="Nome" type="text"/><br/>
+				<input placeholder="Sobrenome" type="text" /><br/>
+				<input placeholder="Email" type="email"/><br/>
+				<input placeholder="Confimação de email" type="email"/><br/>
+				<input placeholder="Username" type="text"/><br/>
+				<input placeholder="Senha" type="password"/><br/>
+				<input placeholder="Confirmação de senha" type="password"/><br/>
+				<input placeholder="Data de nascimento" type="date"/><br/>
+				<input class="sub" type="submit" value="Cadastrar"/><br/>
+				<button class="voltar" href="index.html">Voltar</button>
+
+			</form>
+		</div>
+		
+
+	</body>
+</html>
+
