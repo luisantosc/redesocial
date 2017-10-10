@@ -12,10 +12,10 @@
 	
 	$id = $_SESSION['id'];
 	$add = $_GET['user'];
-	echo $add;
-	$modificar = mysqli_query ($conexao,"UPDATE amizade
-			SET status = 'amigo'
-			WHERE convite = $add and convidado = $id");
-	header("Location: home.php");
-
+	echo $id ." ".$add;
+	
+	$selecao = mysqli_query ($conexao,"INSERT INTO amizade(convite,convidado,status)
+		VALUES
+		($id,$add,'aguardo')");
+	header("Location: home.php?user=$add");
 ?>

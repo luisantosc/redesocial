@@ -33,9 +33,10 @@
 					}
 				}
 				if($c==false){
-					$novoId = mysqli_num_rows($select);
-					$novoId++;
-					//$passw = hash("sha256",$passw);
+					$select = mysqli_query ($conexao,'SELECT max(id) FROM cadastro');
+					$linha = mysqli_fetch_array($select);
+					$novoId = $linha["max(id)"]+1;
+					$passw = hash("sha512",$passw);
 					mysqli_query($conexao, "INSERT INTO cadastro(id,nome,sobrenome,username,senha,email,sexo) VALUES
 					($novoId,'$nome','$snome','$unome','$passw','$email','$sexo')") or die ("Erro ao cadastrar");
 					header ("Location: login.php");

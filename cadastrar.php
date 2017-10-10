@@ -8,10 +8,13 @@
 		
 	</head>
 	<body>
-	
+		<h1 id="Cadastrar"> Cadastrar </h1>
+		<a class="seta" href="index.php"><img class="img" id="Voltar" src="./img/seta_php.png" /> </a>
 		<div class="botao">
-			<a class="entrar-cadastrar" id="Cadastrar" href="cadastrar.php"> Cadastrar </a>
-			<a class="entrar-cadastrar" id="Entrar" href="login.php"> Entrar </a>
+			<a class="entrar-cadastrar" href="cadastrar.php"> Cadastrar </a>
+			<a class="entrar-cadastrar" href="login.php"> Entrar </a>
+			
+			
 		</div>
 
 		<div class="cadastro">
@@ -25,7 +28,7 @@
 				<input name="csenha" placeholder="Confirmação de senha" type="password" maxlength="20"/><br/>
 				Masculino<input type="checkbox" name="sexo" value="M"><br/>
 				Feminino<input type="checkbox" name="sexo" value="F"> <br/>
-				Outro<input type="checkbox" name="sexo" value="O"> <br/>
+				Outro<br/><input type="checkbox" name="sexo" value="O"> <br/>
 				<input name="data" placeholder="Data de nascimento" type="date"/><br/>
 				<input class="sub" type="submit" value="Cadastrar"/><br/>
 				

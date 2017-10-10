@@ -24,7 +24,7 @@
 				echo "Sem conexao";
 			}
 			$select = mysqli_query ($conexao,'SELECT * FROM cadastro');
-			//$passw = hash("sha256",$passw);
+			$passw = hash("sha512",$passw);
 				while($linha = mysqli_fetch_array($select)){
 					if($linha["username"] == $unome && $linha["senha"] == $passw){
 						$c = true;
@@ -55,9 +55,11 @@
 				
 		}
 	?>
+		<h1 id="open"> Entrar </h1>
+		<a class="seta" href="index.php"><img class="img" id="Voltar" src="./img/seta_php.png" /> </a>
 		<div class="botao">
-			<a class="entrar-cadastrar" id="Cadastrar" href="cadastrar.php"> Cadastrar </a>
-			<a class="entrar-cadastrar" id="Entrar" href="login.php"> Entrar </a>
+			<a class="entrar-cadastrar"  href="cadastrar.php"> Cadastrar </a>
+			<a class="entrar-cadastrar"  href="login.php"> Entrar </a>
 		</div>
 		<?php
 			session_start();
@@ -74,9 +76,9 @@
 		}
 		else{
 			$usuario = $_SESSION['usuario'];
-			echo "Você já está cadastrado como $usuario";
+			echo "Você já está cadastrado como $usuario <br/>";
 		?>
-			<a href="home.php">Ir para o perfil</a>
+			<a class="back_perfil" href="home.php">Ir para o perfil</a>
 		<?php
 		}
 		?>
